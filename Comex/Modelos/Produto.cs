@@ -8,7 +8,7 @@ public class Produto
     {
         Nome = nome;
     }
-
+    public int Id { get; set; }
     [JsonPropertyName("title")]
     public string Nome { get; set; }
     [JsonPropertyName("description")]

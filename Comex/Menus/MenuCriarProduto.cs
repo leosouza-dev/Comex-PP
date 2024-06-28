@@ -1,11 +1,12 @@
-﻿using Comex.Modelos;
+﻿using Comex.Data;
+using Comex.Modelos;
 using Comex.Utils;
 
 namespace Comex.Menus
 {
     public class MenuCriarProduto
     {
-        public void CriarProduto(List<Produto> listaDeProdutos)
+        public void CriarProduto(ProdutoRepository produtoRepository)
         {
             Console.Clear();
             Console.WriteLine("Registro de Produto");
@@ -26,7 +27,7 @@ namespace Comex.Menus
             string quantidadeDoProduto = Console.ReadLine();
             produto.Quantidade = int.Parse(quantidadeDoProduto);
 
-            listaDeProdutos.Add(produto);
+            produtoRepository.Adicionar(produto);
             Console.WriteLine($"O Produto {produto.Nome} foi registrado com sucesso!");
             ConsoleUtils.PausaELimpaATela();
         }
